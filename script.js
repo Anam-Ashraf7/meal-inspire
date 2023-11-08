@@ -30,7 +30,6 @@ slidebar.addEventListener("click", () => {
     message.classList.toggle("show-message")
 })
 
-
 //open modal
 
 modalBtn.addEventListener("click", () => {
@@ -46,7 +45,6 @@ closeBtn.addEventListener("click", () => {
     overlay.style.display = "none"
 })
 
-
 function getRandomMeal() {
     fetch("https://www.themealdb.com/api/json/v1/1/random.php")
         .then((res) => res.json())
@@ -58,8 +56,6 @@ function getRandomMeal() {
 }
 
 getRandomMeal()
-
-
 
 function appendRandomMeal(data) {
 
@@ -119,7 +115,7 @@ form.addEventListener("submit", (event) => {
 
 function getResults() {
     
-    searchResult.innerHTML = "" // to refresh content
+    searchResult.innerHTML = "" // to refresh search content
     const searchItem = searchBar.value
     searchTitle.style.visibility = "visible"
     
@@ -144,8 +140,25 @@ function appendSearchResults(data) {
             <img class="recipe-thumb" src=${meal.strMealThumb} alt="">
             <p>${meal.strMeal}</p>
         </div>`
-    })
+            addLinkstoRecipe(meal)
+        })
     } else { // show no results when data is null
         searchResult.innerHTML += `<p id=no-result>No category found :(<p>`
     }
+}
+
+
+let index = 0
+
+function addLinkstoRecipe(recipe) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipe.idMeal}`)
+    .then((res) => res.json())
+    .then((data) => {
+        const link = data.meals[0].strSource
+        const recipes = document.getElementsByClassName("recipe")
+        recipes[index].addEventListener("click", () => {
+            window.open(`${link}`)
+        })
+        index++
+    })
 }
