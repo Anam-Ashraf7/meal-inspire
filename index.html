@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Meal Inspire</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <a href="#">
+                <img id="logo" src="./assets/logo.png" alt="">
+            </a>
+            <div id="nav-links" class="flex-container">
+                <a href="#">Home</a>
+                <a href="#search-result">Recipes</a>
+            </div>
+            <div id="slidebar">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <div id="title-message" class="flex-container show-message">
+        <p>Welcome to MealInspire!</p>
+        <p>Your Daily Recipe Companion! Get ready for a dose of culinary inspiration and discover new recipes effortlessly. Just click refresh, and we'll serve up a delicious meal idea. Say goodbye to 'What to cook today?' dilemmas!</p>
+        <form action="">
+            <input id="search-bar" placeholder="Search by category" type="text">
+            <img id="search-icon" src="./assets/search.png" alt="">
+        </form>
+    </div>
+    <h1 id="random-meal-title">Today's Random Meal</h1>
+    <div id="random-meal-container">
+        <div class="flex-container" id="random-meal">
+            <img id="meal-thumbnail" src="" alt="">
+            <div id="meal-details">
+                <h1 id="meal-name"></h1>
+                <ul id="meal-ing"></ul>
+            </div>
+            <p id="modalBtn">Read more</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h1 id="search-title">Search Results for <span id="category-name"></span></h1>
+    <div class="grid-container" id="search-result"></div>
+
+    <div id="modal" class="flex-container pop-up">
+        <img id="closeBtn" src="./assets/cross.png" alt="">
+        <img id="modal-thumbnail" src="" alt="">
+        <div id="modal-details">
+            <h1 id="meal-name"></h1>
+            <h3>Ingredients</h3>
+            <ul id="allingredients">
+            </ul>
+            <h3>Instructions</h3>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+<footer>
+    <div id="footer-container">
+        <div id="contact-info">
+            <h1 id="contact">Contact</h1>
+            <hr>
+            <a href="mailto:support@mealinspire.com">support@mealinspire.com</a>
+            
+            <ul id="social-links">
+                <li> 
+                    <a href="https://instagram.com" target="_blank"><img src="./assets/instagram.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="https://facebook.com" target="_blank"><img src="./assets/facebook.png" alt=""></a>
+                </li>
+                <li>
+                    <a href="https://youtube.com" target="_blank"><img src="./assets/youtube.png" alt=""></a>
+                </li>
+            </ul>
+            <p>Made with 🖤 by Anam</p>
+        </div>
+    </div>
+</footer>
+
+
+</html>
